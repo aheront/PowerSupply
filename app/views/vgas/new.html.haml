@@ -1,0 +1,21 @@
+= form_for @vga,method: :post do |f|
+  =f.label :vga_name
+  %br
+  =f.text_field :vga_name
+  %br
+  =f.label :vga_power
+  %br
+  =f.text_field :vga_power
+  %br
+  =f.label :brand
+  %br
+  =f.select :brand_id, Brand.all.collect {|p| [ p.brand_name, p.id ] }, { include_blank: true },id:'ec4'
+  %br
+  =f.label :company
+  %br
+  =f.select :company_id, Company.all.collect {|p| [ p.company_name, p.id ] }, { include_blank: true },id:'ec5'
+  %br
+  =f.submit 'Create vga'
+:javascript
+  $(document).ready(function() {
+  $("#ec4").select2();$("#ec5").select2();});

@@ -1,0 +1,2 @@
+class WaterCooling < ApplicationRecord
+end

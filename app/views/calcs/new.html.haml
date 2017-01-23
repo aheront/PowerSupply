@@ -1,0 +1,36 @@
+= form_for :calc, url:calcs_path,method: :post do |f|
+  =f.label 'Cpu'
+  %br
+  =f.select :cpu_id, Cpu.all.collect {|p| [ (Company.find(p.company_id).company_name+' '+Brand.find(p.brand_id).brand_name+' Socket '+SocketCpu.find(p.socket_cpu_id).socket_name+' '+p.name).to_s, p.id ] }, { include_blank: true },id:'ec1'
+  %br
+  =f.label 'Vga'
+  %br
+  =f.select :vga_id, Vga.all.collect {|p| [ (Company.find(p.company_id).company_name+' '+Brand.find(p.brand_id).brand_name+' '+p.vga_name).to_s, p.id ] }, { include_blank: true },id:'ec2'
+  %br
+  =f.label 'Vga count'
+  %br
+  =f.select :vga_count, (1..4).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec6'
+  %br
+  =f.label 'Ram'
+  %br
+  =f.select :ram_id, Ram.all.collect {|p| [ Brand.find(p.brand_id).brand_name, p.id ] }, { include_blank: true },id:'ec3'
+  %br
+  =f.label 'Ram count'
+  %br
+  =f.select :ram_count, (1..8).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec4'
+  %br
+  =f.label 'Fan count'
+  %br
+  =f.select :fan_count, (1..10).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec5'
+  %br
+  =f.label 'Water cooling'
+  %br
+  =f.select :water_cooling_id, WaterCooling.all.collect {|p| [ 'Pomp '+p.pomp_count.to_s+'x'+', Fan'+p.fan_count.to_s+'x'+p.id.to_s, p.id ] }, { include_blank: true },id:'ec6'
+  =f.select :socket, SocketCpu.all.collect {|p| [ p.socket_name, p.id ] }, { include_blank: true },id:'ec7'
+  =f.submit 'calc',url:calcs_path
+:javascript
+  $(document).ready(function() { $("#ec1").select2();
+  $("#ec2").select2();$("#ec3").select2();
+  $("#ec4").select2();$("#ec5").select2();
+  $("#ec6").select2();});
+
