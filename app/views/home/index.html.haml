@@ -1,5 +1,15 @@
-%select#e1.text-right
-  %option{:value => "AL"} Alabama
-  %option{:value => "WY"} Wyoming
-:javascript
-  $(document).ready(function() { $("#e1").select2(); });
+.div
+  .row
+    .col-md-8
+      %h1
+        Power
+      %h3
+        Depending on the accessories, computers may consume power from a few watts to several kilowatts.
+        The power supply must be designed so that to cope with the maximum load, and it is desirable to have
+        reserves - only in this case it will work effectively and quietly.
+        The optimum power BP can be calculated as the sum of the TDP (Thermo) CPU and GPU,
+        multiplied by 1.5. So, for the Core i5-4690 processor (TDP 84 Watt) and a graphics card Radeon R9 280X
+        (TDP of 250 watts) best fit the power supply capacity of 500 watts. 450-watt unit was loaded to approximately
+        80%, to 750 watt - 50%
+      = link_to 'To Calculator', new_calc_path,class:'btn btn-lg btn-primary',size:'100'
+

@@ -1,45 +1,49 @@
-= form_for :calc, url:calcs_path,method: :post do |f|
-
-  =f.label 'Cpu'
-  %br
-  =f.select :cpu_id, Cpu.all.collect {|p| [ (Company.find(p.company_id).company_name+' '+Brand.find(p.brand_id).brand_name+' '+p.name+' Socket '+SocketCpu.find(p.socket_cpu_id).socket_name).to_s, p.id ] }, { include_blank: true },id:'ec1'
-  %br
-  =f.label 'Vga'
-  %br
-  =f.select :vga_id, Vga.all.collect {|p| [ (Company.find(p.company_id).company_name+' '+Brand.find(p.brand_id).brand_name+' '+p.vga_name).to_s, p.id ] }, { include_blank: true },id:'ec2'
-  %br
-  =f.label 'Vga count'
-
-  %br
-  =f.select :vga_count, (1..4).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec3'
-  %br
-  =f.label 'Ram'
-  %br
-  =f.select :ram_id, Ram.all.collect {|p| [ Brand.find(p.brand_id).brand_name, p.id ] }, { include_blank: true },id:'ec4'
-  %br
-  =f.label 'Ram count'
-  %br
-  =f.select :ram_count, (0..8).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec5'
-  %br
-  =f.label 'Fan count'
-  %br
-  =f.select :fan_count, (0..10).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec6'
-  %br
-  =f.label 'Water cooling'
-  %br
-  =f.select :water_cooling_id, WaterCooling.all.collect {|p| [ 'Pomp '+p.pomp_count.to_s+'x'+', Fan'+p.fan_count.to_s+'x', p.id ] }, { include_blank: true },id:'ec7'
-  %br
-  =f.label 'Motherboard'
-  %br
-  =f.select :motherboard_id, Motherboard.all.collect {|p| [ p.name, p.id ] }, { include_blank: true },id:'ec8'
-  %br
-  =f.label 'Sata & Pata count'
-  %br
-  =f.select :sata_count, (0..40).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec9'
-  %br
-  =f.label 'Calculate'
-  %br
-  =f.submit 'Calculate',url:calcs_path,class:'btn btn-primary'
+.div
+  .row
+    .col-md-6
+      = form_for :calc, url:calcs_path,method: :post do |f|
+        =f.label 'Cpu'
+        %br
+        =f.select :cpu_id, Cpu.all.collect {|p| [ (Company.find(p.company_id).company_name+' '+Brand.find(p.brand_id).brand_name+' '+p.name+' Socket '+SocketCpu.find(p.socket_cpu_id).socket_name).to_s, p.id ] }, { include_blank: true },id:'ec1'
+        %br
+        =f.label 'Vga'
+        %br
+        =f.select :vga_id, Vga.all.collect {|p| [ (Company.find(p.company_id).company_name+' '+Brand.find(p.brand_id).brand_name+' '+p.vga_name).to_s, p.id ] }, { include_blank: true },id:'ec2'
+        =f.select :vga_count, (1..4).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec3'
+        %br
+        =f.label 'Ram'
+        %br
+        =f.select :ram_id, Ram.all.collect {|p| [ Brand.find(p.brand_id).brand_name, p.id ] }, { include_blank: true },id:'ec4'
+        =f.select :ram_count, (0..8).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec5'
+        %br
+        =f.label 'Fan count'
+        %br
+        =f.select :fan_count, (0..10).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec6'
+        %br
+        =f.label 'Water cooling'
+        %br
+        =f.select :water_cooling_id, WaterCooling.all.collect {|p| [ 'Pomp '+p.pomp_count.to_s+'x'+', Fan'+p.fan_count.to_s+'x', p.id ] }, { include_blank: true },id:'ec7'
+        %br
+        =f.label 'Motherboard'
+        %br
+        =f.select :motherboard_id, Motherboard.all.collect {|p| [ p.name, p.id ] }, { include_blank: true },id:'ec8'
+        %br
+        =f.label 'Sata & Pata count'
+        %br
+        =f.select :sata_count, (0..40).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec9'
+        %br
+        =f.label 'Calculate'
+        %br
+        =f.submit 'Calculate',url:calcs_path,class:'btn btn-primary btn-lg'
+    .col-md-6
+      %h1.text.text-success
+        Calculation of the power supply unit
+        Choose a correct power supply!
+      %h3.text
+        To avoid possible problems with instability, reboot and power off unexpectedly,
+        we suggest you use the following calculator to determine unit with a power supply that best suits your needs.
+        The result is a recommended value, summarized for all components that
+        you choose - you just buy necessity power supply more power.
 :javascript
   $(document).ready(function() {
   $("#ec1").select2();

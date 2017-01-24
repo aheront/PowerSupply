@@ -19,7 +19,7 @@
 
 
   %body
-    .navbar.navbar-default.navbar-static-top
+    .navbar.navbar-inverse.navbar-static-top
       .container
         %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
           %span.icon-bar
@@ -28,11 +28,9 @@
         %a.navbar-brand(href="#{root_path}") PowerSupply
         .navbar-collapse.collapse.navbar-responsive-collapse
           %ul.nav.navbar-nav
-            %li= link_to "Admin?", "/admin/login",class:'text text-right'
             %li= link_to "Calculate", new_calc_path,class:'text text-right'
+            %li= link_to "Admin?", "/admin/login",class:'text text-right'
     .container
       = bootstrap_flash
       = yield
 
-      %footer
-        %p &copy; Company 2017
