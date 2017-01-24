@@ -15,13 +15,13 @@ class CalcsController < ApplicationController
     @ram_count = calc_params[:ram_count].to_i
     @vga_count = calc_params[:vga_count].to_i
     @fan_count = calc_params[:fan_count].to_i
-    @fan_count = calc_params[:fan_count].to_i
-    @calc = @cpu.power+(@vga.vga_power*@vga_count) +(@ram.power_ram*@ram_count)+(@fan_count*3)+@wat.water_power+@math.power
+    @sata_count = calc_params[:sata_count].to_i
+    @calc = @cpu.power+(@vga.vga_power*@vga_count) +(@ram.power_ram*@ram_count)+(@fan_count*3)+@wat.water_power+@math.power+(@sata_count*15)
   end
   private
   def calc_params
     params.require(:calc).permit(:cpu_id,:vga_id,:ram_count,:ram_id,
                                  :vga_count,:fan_count,:water_cooling_id,
-                                 :motherboard_id)
+                                 :motherboard_id,:sata_count)
   end
 end

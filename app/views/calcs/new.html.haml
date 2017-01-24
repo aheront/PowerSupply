@@ -1,13 +1,15 @@
 = form_for :calc, url:calcs_path,method: :post do |f|
+
   =f.label 'Cpu'
   %br
-  =f.select :cpu_id, Cpu.all.collect {|p| [ (Company.find(p.company_id).company_name+' '+Brand.find(p.brand_id).brand_name+' Socket '+SocketCpu.find(p.socket_cpu_id).socket_name+' '+p.name).to_s, p.id ] }, { include_blank: true },id:'ec1'
+  =f.select :cpu_id, Cpu.all.collect {|p| [ (Company.find(p.company_id).company_name+' '+Brand.find(p.brand_id).brand_name+' '+p.name+' Socket '+SocketCpu.find(p.socket_cpu_id).socket_name).to_s, p.id ] }, { include_blank: true },id:'ec1'
   %br
   =f.label 'Vga'
   %br
   =f.select :vga_id, Vga.all.collect {|p| [ (Company.find(p.company_id).company_name+' '+Brand.find(p.brand_id).brand_name+' '+p.vga_name).to_s, p.id ] }, { include_blank: true },id:'ec2'
   %br
   =f.label 'Vga count'
+
   %br
   =f.select :vga_count, (1..4).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec3'
   %br
@@ -17,11 +19,11 @@
   %br
   =f.label 'Ram count'
   %br
-  =f.select :ram_count, (1..8).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec5'
+  =f.select :ram_count, (0..8).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec5'
   %br
   =f.label 'Fan count'
   %br
-  =f.select :fan_count, (1..10).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec6'
+  =f.select :fan_count, (0..10).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec6'
   %br
   =f.label 'Water cooling'
   %br
@@ -30,6 +32,12 @@
   =f.label 'Motherboard'
   %br
   =f.select :motherboard_id, Motherboard.all.collect {|p| [ p.name, p.id ] }, { include_blank: true },id:'ec8'
+  %br
+  =f.label 'Sata & Pata count'
+  %br
+  =f.select :sata_count, (0..40).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec9'
+  %br
+  =f.label 'Calculate'
   %br
   =f.submit 'Calculate',url:calcs_path,class:'btn btn-primary'
 :javascript
@@ -41,5 +49,6 @@
   $("#ec5").select2();
   $("#ec6").select2();
   $("#ec7").select2();
-  $("#ec8").select2();})
+  $("#ec8").select2();
+  $("#ec9").select2();})
 
