@@ -9,13 +9,8 @@ class CalcsController < ApplicationController
   def create
     @calc = Calc.create(calc_params)
     if @calc.valid?
-      if calc_params[:vga_id].present?
-        vga_present = true
-      else
-        vga_present = false
-      end
-    @calc.calculation(@calc,vga_present)
-    @calc.save
+      @calc.save
+      @calc.calculation(@calc, calc_params[:vga_id].present?)
     else
       render new_calc_path
     end

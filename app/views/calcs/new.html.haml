@@ -1,15 +1,15 @@
+- if @calc.errors.any?
+  .alert.alert-danger
+    %strong Please fix this errors
+    #{ pluralize(@calc.errors.count, "error")}
+    %ul
+      - @calc.errors.full_messages.each do |msg|
+        %li
+          = msg
 .div
   .row
     .col-md-6
       = form_for @calc, method: :post do |f|
-        - if @calc.errors.any?
-          %div#error_explanation
-            %h2
-              = pluralize(@calc.errors.count, "error")
-          %ul
-            - @calc.errors.full_messages.each do |msg|
-              %li
-                = msg
         =f.label 'Cpu'
         %br
         =f.select :cpu_id, Cpu.all.collect {|p| [ (Company.find(p.company_id).name+' '+Brand.find(p.brand_id).name+' '+p.name+' Socket '+SocketCpu.find(p.socket_cpu_id).name).to_s, p.id ] }, { include_blank: true },id:'ec1'

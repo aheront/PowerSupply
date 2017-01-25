@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c215fa1-dc3d-40e9-a75b-2f9038275dea" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PowerSupply.iml" afterPath="$PROJECT_DIR$/.idea/PowerSupply.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/calcs_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/calcs_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/calc.rb" afterPath="$PROJECT_DIR$/app/models/calc.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/calcs/create.html.haml" afterPath="$PROJECT_DIR$/app/views/calcs/create.html.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/calcs/new.html.haml" afterPath="$PROJECT_DIR$/app/views/calcs/new.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/development.log" afterPath="$PROJECT_DIR$/log/development.log" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -34,31 +34,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="calc.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="calc.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/calc.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="calcs_controller.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/calcs_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.html.haml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="33" column="6" lean-forward="true" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="23" />
+            <state relative-caret-position="162">
+              <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -100,10 +80,10 @@
         <option value="$PROJECT_DIR$/db/migrate/20170125091500_create_calcs.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20170125093145_rename_vga_name.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20170125093339_rename.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/calcs_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/calc.rb" />
         <option value="$PROJECT_DIR$/app/views/calcs/new.html.haml" />
         <option value="$PROJECT_DIR$/app/views/calcs/create.html.haml" />
-        <option value="$PROJECT_DIR$/app/models/calc.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/calcs_controller.rb" />
       </list>
     </option>
   </component>
@@ -647,12 +627,12 @@
       <workItem from="1485243660722" duration="13995000" />
       <workItem from="1485269643625" duration="3747000" />
       <workItem from="1485290602118" duration="9499000" />
-      <workItem from="1485330246719" duration="7841000" />
+      <workItem from="1485330246719" duration="10196000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42097000" />
+    <option name="totallyTimeSpent" value="44452000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1046,14 +1026,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/calcs/create.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="68" lean-forward="false" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home/index.html.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1062,28 +1034,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/calcs_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/calcs/create.html.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/calcs/new.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        <state relative-caret-position="-846">
+          <caret line="1" column="21" lean-forward="true" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
           <folding>
-            <marker date="1485338294863" expanded="true" signature="2664:2873" ph="{...}" />
+            <marker date="1485341774772" expanded="true" signature="2632:2841" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/calc.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/calcs_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        <state relative-caret-position="162">
+          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
           <folding />
         </state>
       </provider>
