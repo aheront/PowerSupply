@@ -1,19 +1,27 @@
 .div
   .row
     .col-md-6
-      = form_for :calc, url:calcs_path,method: :post do |f|
+      = form_for @calc, method: :post do |f|
+        - if @calc.errors.any?
+          %div#error_explanation
+            %h2
+              = pluralize(@calc.errors.count, "error")
+          %ul
+            - @calc.errors.full_messages.each do |msg|
+              %li
+                = msg
         =f.label 'Cpu'
         %br
-        =f.select :cpu_id, Cpu.all.collect {|p| [ (Company.find(p.company_id).company_name+' '+Brand.find(p.brand_id).brand_name+' '+p.name+' Socket '+SocketCpu.find(p.socket_cpu_id).socket_name).to_s, p.id ] }, { include_blank: true },id:'ec1'
+        =f.select :cpu_id, Cpu.all.collect {|p| [ (Company.find(p.company_id).name+' '+Brand.find(p.brand_id).name+' '+p.name+' Socket '+SocketCpu.find(p.socket_cpu_id).name).to_s, p.id ] }, { include_blank: true },id:'ec1'
         %br
         =f.label 'Vga'
         %br
-        =f.select :vga_id, Vga.all.collect {|p| [ (Company.find(p.company_id).company_name+' '+Brand.find(p.brand_id).brand_name+' '+p.vga_name).to_s, p.id ] }, { include_blank: true },id:'ec2'
+        =f.select :vga_id, Vga.all.collect {|p| [ (Company.find(p.company_id).name+' '+Brand.find(p.brand_id).name+' '+p.name).to_s, p.id ] }, { include_blank: true },id:'ec2'
         =f.select :vga_count, (1..4).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec3',style:'width: 60px;'
         %br
         =f.label 'Ram'
         %br
-        =f.select :ram_id, Ram.all.collect {|p| [ Brand.find(p.brand_id).brand_name.to_s+'   ', p.id ] }, { include_blank: true },id:'ec4',style:'width: 90px;'
+        =f.select :ram_id, Ram.all.collect {|p| [ Brand.find(p.brand_id).name.to_s+'   ', p.id ] }, { include_blank: true },id:'ec4',style:'width: 90px;'
         =f.select :ram_count, (0..8).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec5',style:'width: 60px;'
         %br
         =f.label 'Fan count'

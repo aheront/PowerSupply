@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170124154623) do
+ActiveRecord::Schema.define(version: 20170125093339) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
@@ -44,15 +44,35 @@ ActiveRecord::Schema.define(version: 20170124154623) do
   end
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "brand_name"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "calcs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "cpu_id"
+    t.integer  "vga_id"
+    t.integer  "ram_id"
+    t.integer  "water_cooling_id"
+    t.integer  "motherboard_id"
+    t.integer  "ram_count"
+    t.integer  "fan_count"
+    t.integer  "vga_count"
+    t.integer  "sata_count"
+    t.integer  "calc"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["cpu_id"], name: "index_calcs_on_cpu_id", using: :btree
+    t.index ["motherboard_id"], name: "index_calcs_on_motherboard_id", using: :btree
+    t.index ["ram_id"], name: "index_calcs_on_ram_id", using: :btree
+    t.index ["vga_id"], name: "index_calcs_on_vga_id", using: :btree
+    t.index ["water_cooling_id"], name: "index_calcs_on_water_cooling_id", using: :btree
+  end
+
   create_table "companies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "company_name"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cpus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -90,13 +110,13 @@ ActiveRecord::Schema.define(version: 20170124154623) do
   end
 
   create_table "socket_cpus", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "socket_name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "vgas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "vga_name"
+    t.string   "name"
     t.integer  "company_id"
     t.integer  "vga_power"
     t.datetime "created_at", null: false
