@@ -9,20 +9,20 @@
         =f.label 'Vga'
         %br
         =f.select :vga_id, Vga.all.collect {|p| [ (Company.find(p.company_id).company_name+' '+Brand.find(p.brand_id).brand_name+' '+p.vga_name).to_s, p.id ] }, { include_blank: true },id:'ec2'
-        =f.select :vga_count, (1..4).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec3'
+        =f.select :vga_count, (1..4).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec3',style:'width: 60px;'
         %br
         =f.label 'Ram'
         %br
-        =f.select :ram_id, Ram.all.collect {|p| [ Brand.find(p.brand_id).brand_name, p.id ] }, { include_blank: true },id:'ec4'
-        =f.select :ram_count, (0..8).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec5'
+        =f.select :ram_id, Ram.all.collect {|p| [ Brand.find(p.brand_id).brand_name.to_s+'   ', p.id ] }, { include_blank: true },id:'ec4',style:'width: 90px;'
+        =f.select :ram_count, (0..8).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec5',style:'width: 60px;'
         %br
         =f.label 'Fan count'
         %br
-        =f.select :fan_count, (0..10).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec6'
+        =f.select :fan_count, (0..10).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec6',style:'width: 60px;'
         %br
         =f.label 'Water cooling'
         %br
-        =f.select :water_cooling_id, WaterCooling.all.collect {|p| [ 'Pomp '+p.pomp_count.to_s+'x'+', Fan'+p.fan_count.to_s+'x', p.id ] }, { include_blank: true },id:'ec7'
+        =f.select :water_cooling_id, WaterCooling.all.collect {|p| [ 'Pomp '+p.pomp_count.to_s+'x'+', Fan'+p.fan_count.to_s+'x', p.id ] }, { include_blank: true },id:'ec7',style:'width: 150px;'
         %br
         =f.label 'Motherboard'
         %br
@@ -30,7 +30,7 @@
         %br
         =f.label 'Sata & Pata count'
         %br
-        =f.select :sata_count, (0..40).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec9'
+        =f.select :sata_count, (0..40).to_a {|p| [ 'x', p ] }, { include_blank: true },id:'ec9',style:'width: 60px;'
         %br
         =f.label 'Calculate'
         %br
