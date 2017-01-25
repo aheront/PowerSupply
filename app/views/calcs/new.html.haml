@@ -1,5 +1,6 @@
 - if @calc.errors.any?
-  .alert.alert-danger
+  .alert.alert-danger.alert-dismissable
+    %a.close{"aria-label" => "close", "data-dismiss" => "alert", :href => "#"} ×
     %strong Please fix this errors
     #{ pluralize(@calc.errors.count, "error")}
     %ul

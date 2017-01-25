@@ -10,7 +10,7 @@ class Calc < ApplicationRecord
   end
   def vga_power(vga_present)
     if vga_present
-       self.vga.vga_power * self.vga_count
+      self.vga.vga_power * (vga_count > 0 ? vga_count : 1)
     else
        0
     end

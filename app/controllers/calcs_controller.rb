@@ -12,7 +12,7 @@ class CalcsController < ApplicationController
       @calc.save
       @calc.calculation(@calc, calc_params[:vga_id].present?)
     else
-      render new_calc_path
+      render 'calcs/new'
     end
   end
 
