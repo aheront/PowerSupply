@@ -13,7 +13,7 @@
       = form_for @calc, method: :post do |f|
         =f.label 'Cpu'
         %br
-        =f.select :cpu_id, Cpu.all.collect {|p| [ (Company.find(p.company_id).name+' '+Brand.find(p.brand_id).name+' '+p.name+' Socket '+SocketCpu.find(p.socket_cpu_id).name).to_s, p.id ] }, { include_blank: true },id:'ec1'
+        =f.select :cpu_id, Cpu.all.collect {|p| [ (Company.find(p.company).name+' '+Brand.find(p.brand_id).name+' '+p.name+' Socket '+SocketCpu.find(p.socket_cpu_id).name).to_s, p.id ] }, { include_blank: true },id:'ec1'
         %br
         =f.label 'Vga'
         %br

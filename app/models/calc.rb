@@ -4,6 +4,8 @@ class Calc < ApplicationRecord
   belongs_to :ram
   belongs_to :water_cooling
   belongs_to :motherboard
+
+
   validates :cpu,:ram,:water_cooling,:motherboard,:fan_count,:ram_count,:sata_count, presence:true
   def calculation(calc,vga_present)
     calc.calc = ((calc.cpu.power + vga_power(vga_present) + ram_power + fan_power + calc.water_cooling.water_power + calc.motherboard.power + sata_power) * 1.3).to_i
@@ -24,5 +26,6 @@ class Calc < ApplicationRecord
   def sata_power
     self.sata_count * 25
   end
+
   end
 

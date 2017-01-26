@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170125093339) do
+ActiveRecord::Schema.define(version: 20170126095051) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
@@ -81,8 +81,9 @@ ActiveRecord::Schema.define(version: 20170125093339) do
     t.string   "name"
     t.integer  "power"
     t.integer  "socket_cpu_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "count_calc",    default: 0
     t.index ["brand_id"], name: "index_cpus_on_brand_id", using: :btree
     t.index ["company_id"], name: "index_cpus_on_company_id", using: :btree
     t.index ["socket_cpu_id"], name: "index_cpus_on_socket_cpu_id", using: :btree
@@ -119,9 +120,10 @@ ActiveRecord::Schema.define(version: 20170125093339) do
     t.string   "name"
     t.integer  "company_id"
     t.integer  "vga_power"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "brand_id"
+    t.integer  "count_calc", default: 0
     t.index ["company_id"], name: "index_vgas_on_company_id", using: :btree
   end
 

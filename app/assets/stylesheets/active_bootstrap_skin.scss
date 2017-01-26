@@ -2,8 +2,8 @@
 
 #wrapper {
   @extend .container-fluid;
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .flash {
@@ -147,13 +147,13 @@
   @extend .row;
 
   &.without_sidebar {
-    #main_content_wrapper { @extend .col-md-6; }
+    #main_content_wrapper { @extend .col-md-12; }
   }
 
   &.with_sidebar {
-    #main_content_wrapper { @extend .col-md-9; }
+    #main_content_wrapper { @extend .col-md-12; }
     #sidebar {
-      @extend .col-md-3;
+      @extend .col-md-12;
       input {
         margin-top: 10px;
       }
@@ -162,8 +162,10 @@
 }
 
 #main_content_wrapper {
+
   .member_link {
     margin-right: 10px;
+
   }
   input[type="checkbox"] {
     display: inline-block;
